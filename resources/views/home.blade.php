@@ -7,7 +7,7 @@
 @stop
 
 @section('content')
-<list-component></list-component>
+
 @stop
 
 @section('css')

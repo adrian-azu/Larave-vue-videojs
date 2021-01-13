@@ -101,11 +101,11 @@ return [
     |
     */
 
-    'classes_auth_card' => '',
-    'classes_auth_header' => 'bg-gradient-info',
+    'classes_auth_card' => 'card-outline card-primary',
+    'classes_auth_header' => '',
     'classes_auth_body' => '',
-    'classes_auth_footer' => 'text-center',
-    'classes_auth_icon' => 'fa-lg text-info',
+    'classes_auth_footer' => '',
+    'classes_auth_icon' => '',
     'classes_auth_btn' => 'btn-flat btn-primary',
 
     /*
@@ -226,8 +226,8 @@ return [
     'menu' => [
         [
             'text' => 'search',
-            'search' => true,
-            'topnav' => true,
+            'search' => false,
+            'topnav' => false,
         ],
         [
             'text' => 'blog',
@@ -241,16 +241,21 @@ return [
         //     'label'       => 4,
         //     'label_color' => 'success',
         // ],
-        ['header' => 'account_settings'],
+        ['header' => 'Products'],
         [
-            'text' => 'Product',
+            'text' => 'List',
             'url'  => 'list',
-            'icon' => 'fas fa-fw fa-user',
+            'icon' => 'fas fa-fw fa-clipboard-list',
         ],
         [
-            'text' => 'change_password',
-            'url'  => 'admin/settings',
-            'icon' => 'fas fa-fw fa-lock',
+            'text' => 'Create',
+            'url'  => 'create',
+            'icon' => 'fas fa-fw fa-plus',
+        ],
+        [
+            'text' => 'Video link',
+            'url'  => 'video',
+            'icon' => 'fas fa-fw fa-play',
         ],
         // [
         //     'text'    => 'multilevel',
@@ -344,7 +349,7 @@ return [
 
     'plugins' => [
         'Datatables' => [
-            'active' => true,
+            'active' => false,
             'files' => [
                 [
                     'type' => 'js',

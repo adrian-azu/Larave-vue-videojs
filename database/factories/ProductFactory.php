@@ -28,7 +28,7 @@ class ProductFactory extends Factory
         $faker->addProvider(new \Bezhanov\Faker\Provider\Commerce($faker));
         return [
             'name' => $faker->productName,
-            'category' => $faker->department,
+            'category' => $faker->department(1, true),
             'description' => $this->faker->sentence(20),
             'datetime'  => $this->faker->dateTime(),
         ];
