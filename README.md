@@ -1,7 +1,10 @@
 
 ## Running the System
+
 DATABASE : MySQL
+
 SERVER: APACHE
+
 DATABASE AND SERVER MANAGEMENT TOOL : XAMPP
 
 Create a MySQL Database named "backendexam" without quotations
