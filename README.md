@@ -9,14 +9,16 @@ To start the server, go to your teminal and go to this root directory and enter 
 
 First tab
 
-``sh
-php artisan serve
-``
+```sh
+$ php artisan serve
+```
+
 Second tab
 
-``sh
-npm run watch
-``
+```sh
+$ npm run watch
+``` 
+
 Migrate the database: php artisan migrate
 
 ## Factory and Seeders (Product/Admin)
@@ -27,14 +29,13 @@ To seed/Factory Admin table:
 
 
 ```sh
-        $ php artisan db:seed --class AdminSeeder 
+$ php artisan db:seed --class AdminSeeder 
 ```
-or run the tinker by entering: 
-
+OR run the tinker by entering: 
 
 ```sh
-        $ php artisan tinker
-        >>\App\Models\User::factory(number-of-data-to-generate-in-integer-format)->create();
+$ php artisan tinker
+>>\App\Models\User::factory(number-of-data-to-generate-in-integer-format)->create();
 ```
 
 
