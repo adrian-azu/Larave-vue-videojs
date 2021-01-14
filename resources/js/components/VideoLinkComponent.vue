@@ -65,6 +65,7 @@ export default {
         }
     },
     mounted() {
+        videojs('videoLink')
     },
     methods:{
         allVideoUrl(){
@@ -141,6 +142,11 @@ export default {
                 }
                 console.log(error)
             }
+        }
+    },
+     beforeDestroy() {
+        if (this.player) {
+            this.player.dispose()
         }
     }
 }

@@ -9,6 +9,8 @@ class Product extends Model
 {
 
     use HasFactory;
+    protected $dateFormat = 'U';
+    const CREATED_AT = 'datetime';
     public $timestamps = false;
     protected $fillable = [
         'name',

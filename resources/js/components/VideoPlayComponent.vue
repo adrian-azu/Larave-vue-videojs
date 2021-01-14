@@ -1,5 +1,5 @@
 <template>
-      <video-link-component :src="src" :type="type" :post="post" />
+      <video-link-component v-if="src" :src="src" :type="type" :post="post" />
 </template>
 
 <script>
@@ -20,7 +20,7 @@ export default {
             type: '',
             post:[],
 			videoOptions: {
-                autoplay: false,
+                autoplay: true,
                 preload: "auto",
                 controls: true,
                 width: 400,
@@ -70,6 +70,17 @@ export default {
             }
         }
     },
+    created(){
+    //pseudo code
+    axios.get('video/url').then((res) => {
+        console.log(res);
+        console.log(this.src)
+        this.src = res.data[0];
+        this.type = this.getFileExtension(res.data[0])
+    }).catch((err) => {
+        console.log(err);
+    });
+}
 
 };
 </script>
