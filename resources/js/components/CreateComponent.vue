@@ -1,21 +1,19 @@
 <template>
     <div class="container">
+        <h2 class="row justify-content-center">Add Product</h2>
         <div class="row justify-content-center">
-            <div class="col-md-8">
+            <div class="col-md-10">
                 <div class="card">
                     <div class="card-body">
                         <div>
-                            <!-- <b-alert show variant="success" v-if="success">
-                                 <h4 class="alert-heading">Product added!</h4> -->
-                                <b-alert v-if="success"
-                                    :show="dismissCountDown"
-                                    dismissible
-                                    variant="success"
-                                    @dismissed="dismissCountDown=0"
-                                    @dismiss-count-down="countDownChanged"
-                                    ><h4>Product Added!</h4>
-                                </b-alert>
-                            <!-- </b-alert> -->
+                            <b-alert v-if="success"
+                                :show="dismissCountDown"
+                                dismissible
+                                variant="success"
+                                @dismissed="dismissCountDown=0"
+                                @dismiss-count-down="countDownChanged"
+                                ><h4>Product Added!</h4>
+                            </b-alert>
                         </div>
                         <form @submit.prevent="submitFormOne">
                             <div class="row mb-2">
@@ -89,6 +87,7 @@
 <script>
 import { required, minLength, maxLength, between } from 'vuelidate/lib/validators'
     export default {
+        name:'CreateComponent',
         data(){
             return{
                 products: {},

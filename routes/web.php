@@ -30,4 +30,9 @@ Route::delete('product/{product}', 'ProductController@destroy');
 Route::post('product', 'ProductController@store');
 Route::put('product', 'ProductController@update');
 Route::get('/create', [App\Http\Controllers\ProductController::class, 'createView'])->name('create.view');
+
+
+Route::post('video','VideoLinkController@saveVideoURL');
+Route::get('video/url', 'VideoLinkController@getVideoURL');
+Route::get('videos/{video}','VideoLinkController@getSingleVideo');
 // Route::resource('products', ProductController::class);

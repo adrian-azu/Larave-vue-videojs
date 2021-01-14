@@ -2,13 +2,10 @@
 
 @section('title', 'Dashboard')
 
-@section('content_header')
-<h1>Video Link</h1>
-@stop
 
 @section('content')
 <div id="app">
-
+    <video-link></video-link>
 </div>
 @stop
 

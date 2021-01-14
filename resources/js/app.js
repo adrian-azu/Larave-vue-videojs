@@ -4,21 +4,25 @@
  * building robust, powerful web applications using Vue and Laravel.
  */
 import Vue from 'vue'
-import App from './App.vue'
+//import App from 'App.vue'
 import moment from 'moment'
 import Vuelidate from 'vuelidate'
 import DataTable from 'laravel-vue-datatable'
 import 'bootstrap/dist/css/bootstrap.min.css'
 import 'bootstrap/dist/css/bootstrap.css';
 import 'bootstrap-vue/dist/bootstrap-vue.css';
-
-import { BootstrapVue, IconsPlugin, FormInputPlugin } from 'bootstrap-vue'
+import 'video.js/dist/video-js.css';
+import 'video.js/dist/video-js.min.css';
+import 'video.js/dist/video.min.js';
+import 'videojs-youtube/dist/Youtube.min.js';
+import { BootstrapVue, IconsPlugin, FormInputPlugin, SpinnerPlugin } from 'bootstrap-vue'
 
 require('./bootstrap');
 Vue.config.productionTip = false
 Vue.use(Vuelidate);
 //import css files
 Vue.use(FormInputPlugin)
+Vue.use(SpinnerPlugin)
 Vue.use(DataTable);
 Vue.filter('formatDate', function (value) {
     if (value) {
@@ -34,10 +38,6 @@ Vue.use(IconsPlugin)
 //     //add vuetify to vue
 //     render: h => h(App),
 // }).$mount('#app')
-
-
-
-
 
 window.Vue = require('vue').default;
 /**
@@ -55,6 +55,8 @@ Vue.component('list-component', require('./components/ListProductComponent.vue')
 Vue.component('create-component', require('./components/CreateComponent.vue').default);
 Vue.component('datatable-list', require('./components/BootstrapDatatable.vue').default);
 Vue.component('edit-modal-vue', require('./components/modalvue.vue').default);
+Vue.component('video-player', require('./components/VideoLinkComponent.vue').default);
+Vue.component('video-link', require('./components/VideoPlayComponent.vue').default);
 Vue.component('pagination', require('laravel-vue-pagination'));
 /**
  * Next, we will create a fresh Vue application instance and attach it to

@@ -127,13 +127,6 @@ import { required, minLength, maxLength, between } from 'vuelidate/lib/validator
                     description : this.description,
                     datetime : this.date+ " " +this.time,
                 }).then(res=>{
-                        // this.name= res.data.name,
-                        // this.category= res.data.category,
-                        // this.description= res.data.description,
-                        // this.datetime= res.data.datetime,
-                        // this.date=res.data.datetime.split(" ")[0],
-                        // this.time=res.data.datetime.split(" ")[1],
-                        // this.image =this.image,
                         this.success = res.data,
                         this.showAlert()
                     }) .catch(error => {
