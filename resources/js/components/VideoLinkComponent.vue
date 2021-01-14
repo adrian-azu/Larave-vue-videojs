@@ -65,7 +65,7 @@ export default {
         }
     },
     mounted() {
-        videojs('videoLink')
+        this.player = videojs('videoLink')
     },
     methods:{
         allVideoUrl(){
