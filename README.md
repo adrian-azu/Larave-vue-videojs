@@ -1,5 +1,33 @@
 
-## Running the development
+## Running the System
+DATABASE : MySQL
+SERVER: APACHE
+DATABASE AND SERVER MANAGEMENT TOOL : XAMPP
+
+Create a MySQL Database named "backendexam" without quotations
+To start the server, go to your teminal and go to this root directory and enter the following:
+
+php artisan serve
+npm run watch
+
+Migrate the database: php artisan migrate
+
+## Factory and Seeders (Product/Admin)
+
+To create a test data enter the following commands (without quotations):
+
+To seed/Factory Admin table: 
+        "php artisan db:seed --class AdminSeeder"
+        or run the tinker by entering: 
+        "php artisan tinker" 
+        "\App\Models\User::factory(number-of-data-to-generate-in-integer-format)->create();"
+
+To seed/Factory Product table: 
+        "php artisan db:seed --class ProductSeeder"
+        or run the tinker by entering: 
+        "php artisan tinker" 
+        "\App\Models\Product::factory(number-of-data-to-generate-in-integer-format)->create();"
+##        Thank you 
 
 
 <p align="center"><a href="https://laravel.com" target="_blank"><img src="https://raw.githubusercontent.com/laravel/art/master/logo-lockup/5%20SVG/2%20CMYK/1%20Full%20Color/laravel-logolockup-cmyk-red.svg" width="400"></a></p>
