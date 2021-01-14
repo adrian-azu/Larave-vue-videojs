@@ -8,6 +8,10 @@ use Facade\FlareClient\Stacktrace\File;
 use Illuminate\Support\Facades\Storage;
 class VideoLinkController extends Controller
 {
+
+    public function __construct() {
+        $this->middleware(['auth']);
+    }
     public function index(){
         return view('video');
     }

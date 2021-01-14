@@ -23,7 +23,7 @@
                         <option :key="posts" v-bind:value="posts" v-for="posts in post">{{ posts }}</option>
                     </select>
                     <b-input-group prepend="Video Link" class="mt-3">
-                        <b-form-input v-model="selected"></b-form-input>
+                        <b-form-input v-model="selected" placeholder="Accepts: [youtube/mp4/3gp/ogg/wmv/mov/avi/webm/mkv/mpv] URL"></b-form-input>
                         <b-input-group-append>
                         <b-button variant="outline-success" @click="changeVideo()">Play</b-button>
                         </b-input-group-append>

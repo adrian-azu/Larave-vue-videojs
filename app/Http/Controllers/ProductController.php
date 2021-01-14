@@ -86,11 +86,6 @@ class ProductController extends Controller
      * @param  \App\Models\Product  $product
      * @return \Illuminate\Http\Response
      */
-    public function edit(Product $product)
-    {
-        //
-    }
-
     /**
      * Update the specified resource in storage.
      *
@@ -114,8 +109,6 @@ class ProductController extends Controller
             'datetime' => $request->datetime
         ]);
         return "ok";
-
-
     }
 
     /**
