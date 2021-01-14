@@ -7,26 +7,50 @@ DATABASE AND SERVER MANAGEMENT TOOL : XAMPP
 Create a MySQL Database named "backendexam" without quotations
 To start the server, go to your teminal and go to this root directory and enter the following:
 
-php artisan serve
-npm run watch
+First tab
 
+``sh
+php artisan serve
+``
+Second tab
+
+``sh
+npm run watch
+``
 Migrate the database: php artisan migrate
 
 ## Factory and Seeders (Product/Admin)
 
-To create a test data enter the following commands (without quotations):
+To create a test data enter the following commands :
 
 To seed/Factory Admin table: 
-        "php artisan db:seed --class AdminSeeder"
-        or run the tinker by entering: 
-        "php artisan tinker" 
-        "\App\Models\User::factory(number-of-data-to-generate-in-integer-format)->create();"
 
-To seed/Factory Product table: 
-        "php artisan db:seed --class ProductSeeder"
-        or run the tinker by entering: 
-        "php artisan tinker" 
-        "\App\Models\Product::factory(number-of-data-to-generate-in-integer-format)->create();"
+
+```sh
+        $ php artisan db:seed --class AdminSeeder 
+```
+or run the tinker by entering: 
+
+
+```sh
+        $ php artisan tinker
+        >>\App\Models\User::factory(number-of-data-to-generate-in-integer-format)->create();
+```
+
+
+To seed/Factory Product table:
+
+```sh
+        $ php artisan db:seed --class ProductSeeder
+```
+
+or run the tinker by entering: 
+
+```sh
+        $ php artisan tinker
+       >>\App\Models\Product::factory(number-of-data-to-generate-in-integer-format)->create();
+```
+
 ##        Thank you 
 
 
