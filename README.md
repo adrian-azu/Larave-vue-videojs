@@ -1,5 +1,5 @@
 
-## Running the System
+## Environment
 
 DATABASE : MySQL
 
@@ -7,7 +7,10 @@ SERVER: APACHE
 
 DATABASE AND SERVER MANAGEMENT TOOL : XAMPP
 
+## Set-up
+
 Create a MySQL Database named "backendexam" without quotations
+
 To start the server, go to your teminal and go to this root directory and enter the following:
 
 First tab
