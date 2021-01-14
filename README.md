@@ -42,14 +42,14 @@ $ php artisan tinker
 To seed/Factory Product table:
 
 ```sh
-        $ php artisan db:seed --class ProductSeeder
+$ php artisan db:seed --class ProductSeeder
 ```
 
 or run the tinker by entering: 
 
 ```sh
-        $ php artisan tinker
-       >>\App\Models\Product::factory(number-of-data-to-generate-in-integer-format)->create();
+$ php artisan tinker
+>>\App\Models\Product::factory(number-of-data-to-generate-in-integer-format)->create();
 ```
 
 ##        Thank you 
