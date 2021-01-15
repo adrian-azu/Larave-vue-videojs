@@ -44,7 +44,7 @@
                     </div>
                     <div class="form-group">
                         <label for="image">Upload an image</label>
-                        <input type="file"  v-on:change="onFileChange" class="form-control-file" id="image" accept="image/*" :class="{'is-invalid':!image && !success, 'is-valid':image !==''}">
+                        <input type="file"  v-on:change="onFileChange" class="form-control-file" id="image" accept="image/*" :class="{'is-invalid':!image && !success, 'is-valid':image !==''}" multiple>
                         <div class="valid-feedback"></div>
                         <div class="invalid-feedback">
                             <span v-if="!image && !success">No image uploaded</span>
