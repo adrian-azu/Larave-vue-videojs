@@ -2,9 +2,9 @@
 
 namespace Database\Seeders;
 
-use App\Models\Product;
-use Database\Seeders\Product\ProductSeeder;
 use Illuminate\Database\Seeder;
+use Database\Seeders\AdminSeeder;
+use Database\Seeders\ProductSeeder;
 
 class DatabaseSeeder extends Seeder
 {
@@ -16,9 +16,10 @@ class DatabaseSeeder extends Seeder
     public function run()
     {
         $this->call(
-            AdminSeeder::class,
-            ProductSeeder::class
-        );
+            [
+                AdminSeeder::class,
+                ProductSeeder::class,
+            ]);
 
     }
 }
