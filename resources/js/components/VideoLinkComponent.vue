@@ -70,11 +70,17 @@ export default {
     methods:{
         allVideoUrl(){
             axios.get('video/url').then(res=>{
-                this.post.splice(0, this.post.length);
-                  for (let index = 0; index < res.data.length; index++) {
-                      this.post.push(res.data[index]);
-                  }
-                 console.log(this.post);
+                  if(res.data==0){
+                        console.log('videolink')
+                }else{
+                    this.post.splice(0, this.post.length);
+
+                    for (let index = 0; index < res.data.length; index++) {
+                        this.post.push(res.data[index]);
+                    }
+                    console.log(this.post);
+                }
+
             }).catch(error=>{
                 console.log(error);
             })

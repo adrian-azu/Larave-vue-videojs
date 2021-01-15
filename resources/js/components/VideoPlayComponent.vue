@@ -36,17 +36,18 @@ export default {
     },
 
     mounted(){
-        this.allVideoUrl();
+        // this.allVideoUrl();
     },
     methods:{
          allVideoUrl(){
             axios.get('video/url').then(res=>{
-                this.src= res.data[0];
-                this.type=this.getFileExtension(res.data[0]);
-                  for (let index = 0; index < res.data.length; index++) {
-                      this.post.push(res.data[index]);
-                  }
-                 console.log(this.post);
+                if(res.data.length!==0){
+                    this.src= res.data[0];
+                    this.type=this.getFileExtension(res.data[0]);
+                    for (let index = 0; index < res.data.length; index++) {
+                        this.post.push(res.data[index]);
+                    }
+                }
             }).catch(error=>{
                 console.log(error);
             })
@@ -71,16 +72,23 @@ export default {
         }
     },
     created(){
-    //pseudo code
-    axios.get('video/url').then((res) => {
-        console.log(res);
-        console.log(this.src)
-        this.src = res.data[0];
-        this.type = this.getFileExtension(res.data[0])
-    }).catch((err) => {
-        console.log(err);
-    });
-}
+        axios.get('video/url').then((res) => {
+            if(res.data.length==0){
+                console.log('error');
+                this.src = 'https://www.youtube.com/watch?v=2gUezppbcNI&list=PLLhM616BHkssBiiqSpIkI8nSg7f14bab7';
+                this.type = 'video/youtube';
+                console.log(this.src);
+            }else{
+                for (let index = 0; index < res.data.length; index++) {
+                    this.post.push(res.data[index]);
+                }
+                this.src = res.data[0];
+                this.type = this.getFileExtension(res.data[0])
+            }
+        }).catch((err) => {
+            console.log(err);
+        });
+    }
 
 };
 </script>

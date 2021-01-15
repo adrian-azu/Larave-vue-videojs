@@ -11,13 +11,12 @@ use Bezhanov\Faker\Provider\Commerce;
 use Bezhanov\Faker\Provider as CategoryList;
 use Bezhanov\Faker\ProviderCollectionHelper;
 
-
 class ProductController extends Controller
 {
     public function __construct()
     {
 
-        $this->middleware('auth')->except(['allProduct', 'productDescription','show']);
+        $this->middleware('auth')->except(['allProduct', 'productDescription', 'show']);
     }
     /**
      * Display a listing of the resource.
@@ -32,14 +31,16 @@ class ProductController extends Controller
     {
         return view('create');
     }
-    public function allProduct(){
+    public function allProduct()
+    {
 
         $products = DB::table('products')->get()->all();
-        return response()->json($products,200);
+        return response()->json($products, 200);
     }
     public function productDescription()
     {
-        return response()->json(CategoryList\Commerce::productCategory(),200);
+        $department = ["Books", "Movies", "Music", "Games", "Electronics", "Computers", "Home", "Garden", "Tools", "Grocery", "Health", "Beauty", "Toys", "Kids", "Baby", "Clothing", "Shoes", "Jewelry", "Sports", "Outdoors", "Automotive", "Industrial"];
+        return response()->json($department, 200);
     }
     public function destroy(Product $product)
     {
@@ -117,5 +118,4 @@ class ProductController extends Controller
      * @param  \App\Models\Product  $product
      * @return \Illuminate\Http\Response
      */
-
 }
