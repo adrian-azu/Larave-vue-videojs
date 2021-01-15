@@ -20,6 +20,10 @@ DATABASE AND SERVER MANAGEMENT TOOL : XAMPP
 - Run `composer install` or ```php composer.phar install```
 - Run `php artisan key:generate`
 
+## If you encountered any proble
+```sh
+composer update --lock
+```
 ##Install the packages
 ```sh
 $ npm install
