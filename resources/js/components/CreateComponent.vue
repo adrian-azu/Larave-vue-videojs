@@ -1,8 +1,8 @@
 <template>
     <div class="container">
-        <h2 class="row justify-content-center">Add Product</h2>
+        <h2 class="row justify-content ml-2 mb-4">Add Product</h2>
         <div class="row justify-content-center">
-            <div class="col-md-10">
+            <div class="col-lg">
                 <div class="card">
                     <div class="card-body">
                         <div>

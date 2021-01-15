@@ -17,7 +17,7 @@ class VideoLinkController extends Controller
     }
     public function saveVideoURL(Request $request){
       $request->validate([
-          'video' => 'required|file'
+          'video' => 'required|file|size:20000'
       ]);
 
       $path = $request->file('video')->store('videos');

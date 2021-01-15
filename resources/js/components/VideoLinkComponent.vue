@@ -1,8 +1,8 @@
 <template>
     <div class="container">
-        <h2 class="row justify-content-center">Video Link</h2>
+        <h2 class="row justify-content ml-2 mb-3">Video Links</h2>
         <div class="row justify-content-center">
-            <div class="col-md-10 mb-3">
+            <div class="col-lg mb-3">
                 <b-row class="my-2 w-75">
                     <b-col>
                     <b-form-file
@@ -10,9 +10,10 @@
                     class="mt-2"
                     accept="video/*"
                     placeholder="Upload you video here"></b-form-file>
+                    <small class="sm m-1">Accepts Video not higher 20MB</small>
                     </b-col>
                     <b-col>
-                        <b-button variant="primary"  class="btn btn-primary mt-2" @click="saveVideo()">Submit
+                        <b-button variant="primary"  class="btn btn-primary mt-2" @click="saveVideo()" >Submit
                             <b-spinner v-if="saving" small type="grow"></b-spinner>
                             </b-button>
                     </b-col>
@@ -119,17 +120,25 @@ export default {
             }
         },
         saveVideo(){
-            this.saving = true;
-             const data = new FormData();
-             data.append('video', this.file2);
+
+
+             console.log(this.file2);
+             if(this.file2.size<20000){
+                 this.saving = true;
+                 const data = new FormData();
+                data.append('video', this.file2);
              axios.post('video',data).then(res=>{
-                     this.saving = false;
+                this.saving = false;
                  this.allVideoUrl();
                  console.log(res);
              }).catch(error => {
                   this.saving = false;
-                    onsole.log(error.response)
+                    alert(error.data);
             });
+            }else{
+                alert('File should not be exceeds 20MB');
+            }
+
         },
         getFileExtension(filename) {
             try{

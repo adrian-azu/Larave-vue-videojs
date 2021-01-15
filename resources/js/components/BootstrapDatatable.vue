@@ -1,6 +1,7 @@
 <template>
-  <div class="container mt-3 ">
-      <h2 class="row justify-content-center">Product</h2>
+
+  <div class="container mt-2 ">
+    <h2 class="row justify-content ml-2 mb-3">Products</h2>
       <b-container fluid>
             <b-row class="mb-3">
                 <b-col lg="6" class="my-1">
