@@ -13,6 +13,15 @@ Create a MySQL Database named "backendexam" without quotations
 
 To start the server, go to your teminal and go to this root directory and enter the following:
 
+Install the packages
+
+```sh
+$ npm install
+$ npm run dev
+```
+
+Run the servers
+
 First tab
 
 ```sh
