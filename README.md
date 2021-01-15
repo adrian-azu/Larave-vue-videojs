@@ -31,8 +31,13 @@ or
 $ yarn install
 ```
 
-Create a file `.env`
-Run the servers
+Migrate the database: 
+
+```sh
+php artisan migrate
+```
+
+##Run the server
 
 First tab
 
@@ -45,12 +50,6 @@ Second tab
 ```sh
 $ npm run watch
 ``` 
-
-Migrate the database: 
-
-```sh
-php artisan migrate
-```
 
 ## Factory and Seeders (Product/Admin)[Optional]
 
