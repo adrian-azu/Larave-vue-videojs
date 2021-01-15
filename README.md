@@ -16,7 +16,7 @@ DATABASE AND SERVER MANAGEMENT TOOL : XAMPP
 - Open the console and cd the `Larave-vue-videojs` root directory
 - Rename `.env.example` file to `.env` inside your project root and fill the database information.
   (windows wont let you do it, so you have to open your console cd your project root directory and run `mv .env.example .env` )
-- Add this to the end of your `.env` file `FILESYSTEM_DRIVER=public`
+- Add this `FILESYSTEM_DRIVER=public` to the end of your `.env` file 
 - Run `composer install` or ```php composer.phar install```
 - Run `php artisan key:generate`
 
