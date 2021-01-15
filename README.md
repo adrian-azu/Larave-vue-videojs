@@ -31,7 +31,7 @@ or
 $ yarn install
 ```
 
-Migrate the database: 
+##Migrate the database: 
 
 ```sh
 php artisan migrate
