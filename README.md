@@ -52,7 +52,7 @@ Second console
 $ npm run watch
 ``` 
 
-## Factory and Seeders (Product/Admin)[Optional]
+## Factory and Seeders (Product/Admin)
 
 ```sh
 php artisan db:seed
