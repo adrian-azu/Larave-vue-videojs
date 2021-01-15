@@ -40,13 +40,13 @@ php artisan migrate
 
 ##Run the server
 
-First tab
+First console
 
 ```sh
 $ php artisan serve
 ```
 
-Second tab
+Second console
 
 ```sh
 $ npm run watch
