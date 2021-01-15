@@ -20,7 +20,7 @@ DATABASE AND SERVER MANAGEMENT TOOL : XAMPP
 - Run `composer install` or ```php composer.phar install```
 - Run `php artisan key:generate`
 
-## If you encountered any proble
+## If you encountered any problem
 ```sh
 composer update --lock
 ```
