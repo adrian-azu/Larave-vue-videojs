@@ -9,17 +9,29 @@ DATABASE AND SERVER MANAGEMENT TOOL : XAMPP
 
 ## Set-up
 
-Create a MySQL Database named "backendexam" without quotations
+##Mac Os, Ubuntu and windows users continue here:
+- Create a database locally named `backendexam` utf8_general_ci 
+- Download composer https://getcomposer.org/download/
+- Pull Laravel/php project: `https://github.com/dekarona22/Larave-vue-videojs.git`.
+- Rename `.env.example` file to `.env`inside your project root and fill the database information.
+  (windows wont let you do it, so you have to open your console cd your project root directory and run `mv .env.example .env` )
+- Open the console and cd your project root directory
+- Run `composer install` or ```php composer.phar install```
+- Run `php artisan key:generate`
 
-To start the server, go to your teminal and go to this root directory and enter the following:
-
-Install the packages
-
+##Install the packages
 ```sh
 $ npm install
 $ npm run dev
 ```
 
+or 
+
+```sh
+$ yarn install
+```
+
+Create a file `.env`
 Run the servers
 
 First tab
@@ -34,14 +46,19 @@ Second tab
 $ npm run watch
 ``` 
 
-Migrate the database: php artisan migrate
+Migrate the database: 
 
-## Factory and Seeders (Product/Admin)
+```sh
+php artisan migrate
+```
 
-To create a test data enter the following commands :
+## Factory and Seeders (Product/Admin)[Optional]
+
+```sh
+php artisan db:seed
+```
 
 To seed/Factory Admin table: 
-
 
 ```sh
 $ php artisan db:seed --class AdminSeeder 
@@ -52,7 +69,6 @@ OR run the tinker by entering:
 $ php artisan tinker
 >>\App\Models\User::factory(number-of-data-to-generate-in-integer-format)->create();
 ```
-
 
 To seed/Factory Product table:
 
