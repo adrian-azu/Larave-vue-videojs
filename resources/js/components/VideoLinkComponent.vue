@@ -101,6 +101,11 @@ export default {
                         e.stopImmediatePropagation();
                             var error = video.error();
                             console.log('error!', error.code, error.type , error.message);
+                             if(!alert(error.message))
+                            {
+                                window.location.reload();
+                            }
+
                     });
                     video.play();
                 }catch(error){
