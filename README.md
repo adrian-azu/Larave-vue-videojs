@@ -13,9 +13,10 @@ DATABASE AND SERVER MANAGEMENT TOOL : XAMPP
 - Create a database locally named `backendexam` utf8_general_ci 
 - Download composer https://getcomposer.org/download/
 - Pull Laravel/php project: `git clone https://github.com/dekarona22/Larave-vue-videojs.git`.
-- Rename `.env.example` file to `.env`inside your project root and fill the database information.
+- Open the console and cd the `Larave-vue-videojs` root directory
+- Rename `.env.example` file to `.env` inside your project root and fill the database information.
   (windows wont let you do it, so you have to open your console cd your project root directory and run `mv .env.example .env` )
-- Open the console and cd your project root directory
+- Add this to the end of your `.env` file `FILESYSTEM_DRIVER=public`
 - Run `composer install` or ```php composer.phar install```
 - Run `php artisan key:generate`
 
