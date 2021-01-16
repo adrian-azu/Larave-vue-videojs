@@ -4,7 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use Illuminate\Routing\Controller;
-use Facade\FlareClient\Stacktrace\File;
+// use Facade\FlareClient\Stacktrace\File;
 use Illuminate\Support\Facades\Storage;
 class VideoLinkController extends Controller
 {
@@ -17,7 +17,7 @@ class VideoLinkController extends Controller
     }
     public function saveVideoURL(Request $request){
       $request->validate([
-          'video' => 'required|file|size:20000'
+          'video' => 'required|file'
       ]);
 
       $path = $request->file('video')->store('videos');

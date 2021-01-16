@@ -10,7 +10,7 @@
                     class="mt-2"
                     accept="video/*"
                     placeholder="Upload you video here"></b-form-file>
-                    <small class="sm m-1">Accepts Video not higher 20MB</small>
+                    <small class="sm m-1">Accepts Video not higher 50MB</small>
                     </b-col>
                     <b-col>
                         <b-button variant="primary"  class="btn btn-primary mt-2" @click="saveVideo()" >Submit
@@ -59,6 +59,7 @@ export default {
             videolink: this.selected,
             selected: '',
             allowedVideo:["mp4", "3gp", "ogg","wmv", "mov","avi",'webm',"mkv", 'mpv'],
+            allowedMime:["video/mp4", "video/3gp", "video/ogg","video/wmv", "video/mov","video/avi",'video/webm',"video/mkv", 'video/mpv'],
             options: [{
                 value:'',
                 text: ''
@@ -71,7 +72,7 @@ export default {
     methods:{
         allVideoUrl(){
             axios.get('video/url').then(res=>{
-                  if(res.data==0){
+                if(res.data==0){
                         console.log('videolink')
                 }else{
                     this.post.splice(0, this.post.length);
@@ -125,25 +126,22 @@ export default {
             }
         },
         saveVideo(){
-
-
              console.log(this.file2);
-             if(this.file2.size<20000){
-                 this.saving = true;
-                 const data = new FormData();
+             if(this.file2.size<500000 || !this.allowedMime.includes(this.file2.type)){
+                this.saving = true;
+                const data = new FormData();
                 data.append('video', this.file2);
-             axios.post('video',data).then(res=>{
+                axios.post('video',data).then(res=>{
                 this.saving = false;
-                 this.allVideoUrl();
-                 console.log(res);
+                this.allVideoUrl();
+                console.log(res);
              }).catch(error => {
-                  this.saving = false;
-                    alert(error.data);
+                this.saving = false;
+                alert(error);
             });
             }else{
-                alert('File should not be exceeds 20MB');
+                alert('Video is either exceeds 50MB or not included in accepted video type');
             }
-
         },
         getFileExtension(filename) {
             try{
